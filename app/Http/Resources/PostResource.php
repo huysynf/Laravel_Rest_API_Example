@@ -16,7 +16,11 @@ class PostResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name
+            'name' => $this->name,
+            'body' => $this->body,
+            'update_url' => route('api.posts.update', $this->id),
+            'show_url' => route('api.posts.show', $this->id),
+            'delete_url' => route('api.posts.destroy', $this->id),
         ];
     }
 }
